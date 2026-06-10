@@ -149,6 +149,9 @@ def main():
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     logger.info("✅ Jarvis iniciado y escuchando...")
     app.run_polling(drop_pending_updates=True)
+import asyncio
+asyncio.set_event_loop(asyncio.new_event_loop())
 
 if __name__ == "__main__":
     main()
+
